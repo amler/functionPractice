@@ -48,10 +48,11 @@ function slideshowNext() {
 }
 
 function renderTestimonial (testimonial) {
-	if (testimonial.css('display', 'block')) {
-		testimonial.style.display = 'none';
+	if (testimonial != null) {
+    	testimonial.style.display = '';
 	}
 	testimonial.style.display = 'block';
+	console.log(testimonial);
 }
 
 /*function SlideShow (domId) {
