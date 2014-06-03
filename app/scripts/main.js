@@ -19,7 +19,7 @@ var testimonialArray = document.getElementsByClassName('testimonial');
 
 // This number is used to refer to a value of the Array 
 // and to know what testimonial should be shown next.
-var i = 0;
+var current = 0;
 //This is the total amount of divs used in the DOM, 
 //it is used to determine if the testimonial can still grow. 
 var allTestimonials = testimonialArray.length;
@@ -31,36 +31,32 @@ var allTestimonials = testimonialArray.length;
 // function to show next image
 function slideshowNext() {
 
-	i +=1
-	if (i > (allTestimonials - 1)) {
-		i = 0
+	current +=1
+	if (current > (allTestimonials - 1)) {
+		current = 0
 	}
-	renderTestimonial(testimonialArray[i]);
+	renderTestimonial();
 }
 
- function slideshowPrev() {
-   i -=1
-   if (i <= 0) {
-   	i = allTestimonials - 1;
-   }
+function slideshowPrev() {
+	current -=1
+	if (current <= 0) {
+		current = allTestimonials - 1;
+	}
 	//console.log(testimonialArray[i])
-	renderTestimonial(testimonialArray[i]);
+	renderTestimonial();
 }
 
-function renderTestimonial (testimonial) {
-	if (testimonial != null) {
-    	testimonial.style.display = '';
+function renderTestimonial () {
+	for (var i = 0; i < allTestimonials; i++) {
+		if (i !== current) {
+			testimonialArray[i].style.display = 'none';
+		} else {
+			testimonialArray[i].style.display = 'block';
+		}
 	}
-	testimonial.style.display = 'block';
-	console.log(testimonial);
 }
-
-/*function SlideShow (domId) {
-    this.container = document.getElementById(domId);
-    this.pictures = [];
-    this.currentPicture = 0;
-};*/
-
+renderTestimonial();
 
 //////////////////////
 // click events
