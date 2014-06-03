@@ -1,0 +1,78 @@
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+body {
+    color: #2c2d33;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+ul {
+    display: block;
+    
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    display: block;
+    float: left;
+    height: 38px;
+    margin: 40px 20px 10px 20px;
+    width: 38px;
+}
+
+.testimonials {
+    border: 1px solid red;
+    width: 900px;
+    height: 480px;
+    overflow: scroll;
+
+
+    .testimonial {
+        margin: 140px 0 0 0;
+        display: none;
+
+        .testimonial-left {
+            clear: left;
+            margin: 0 45px 200px 100px;
+            float: left;
+
+            img {
+                border-radius: 50%;
+                box-shadow: 10px 60px 80px #ccc;
+            }
+        }
+
+        .testimonial-right {
+            margin: 0 0 100px 0;
+            float: left;
+            width: 475px;
+
+            blockquote {
+                font-weight: 200;
+                margin: 0;
+                padding: 0;
+                font-size: 24px;
+                line-height: 150%;
+
+
+                p {
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+            .author {
+                font-size: 14px;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+            .divider {
+                background-color: #55cbe3;
+                height: 10px;
+                width: 50px;
+
+            }
+        }
+    }
+}
+
+
